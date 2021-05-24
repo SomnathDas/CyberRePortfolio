@@ -1,0 +1,25 @@
+
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 450px;
+    word-wrap: break-word;
+    background-color: #000;
+    background-clip: border-box;
+    border-radius: 1px;
+}
+
+.card-header {
+    background-color: #000;
+}
+
+.card-body h4 {
+    color: #fff
+}
