@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
     <title>Somnath Das ~ Portfolio</title>
     <meta name="theme-color" content="#e73c7e">
     <meta name="twitter:description" content="I am developer and a data science learner. This is my portfolio containing a summarized information about me and my projects">
@@ -36,7 +36,8 @@
     <link rel="stylesheet" href="assets/css/cards.css">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
     <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css'>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style type="text/css">
     	
 body{margin-top:20px;}
@@ -151,50 +152,114 @@ body{margin-top:20px;}
     		</div>
     	</div>
     </div>
-    <section>
-        <div class="container d-flex justify-content-center mt-100">
-    <div class="row">
-        <div class="col-lg-6 mb-4">
-            <p>Last Updated: 24.05.2021</p>
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold" style="font-family: Arial, Helvetica, sans-serif;">Skill Progress Chart</h6>
-                </div>
-                <div class="card-body" id="skill-progress-bar">
-                    <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Javascript <span class="float-right">80%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 82%; background-color: yellow;" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Typescript <span class="float-right">52%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 52%; background-color: skyblue;" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Python <span class="float-right">72%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 72%; background-color: orange;" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Machine Learning <span class="float-right">8%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 8%; background-color: slateblue;" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Electron.js <span class="float-right">30%</span></h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 30%; background-color: cornflowerblue;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- <footer>
-        <div class="container text-center" id="date-year">
-            <p class="text-center" style="font-family: 'Major Mono Display', monospace;font-size: 14px;filter: blur(0px) invert(0%);color: rgb(255,255,255);">Copyright © 2021<br>Somnath Das</p>
-        </div>
-    </footer>
+    <style>
+* {box-sizing: border-box}
+
+.barContainer {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.274);
+}
+
+.barBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+    height: 20em;
+    word-wrap: break-word;
+    background-color: #000;
+    background-clip: border-box;
+    border-radius: 1px
+}
+
+.skills {
+  text-align: right;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto;
+    min-width: 0;
+    width: 100%;
+    height: 30em;
+    word-wrap: break-word;
+    background-color: rgb(0, 0, 0);
+    background-clip: border-box;
+    border-radius: 1px
+  
+}
+
+.ts {width: 64%; background: linear-gradient(to right, #3399ff 0%, #33ccff 100%);}
+.py {width: 79%; background: linear-gradient(to right, #ffcc66 0%, #ff9966 100%);}
+.js {width: 84%; background: linear-gradient(to right, #ccff66 0%, #ffcc00 100%);}
+.ml {width: 8%; background: linear-gradient(to right, #cc33ff 0%, #993399 100%);}
+.ejs {width: 15%;  background: linear-gradient(to right, #00ffff 0%, #0099ff 100%);}
+
+</style>
+    <section class="text-center content-section" id="about">
+        <p>Last Updated: 24.05.2021</p>
+
+        <div class="container barBox grid-container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto" style="display: grid;">
+                       <div class="container"> 
+                           <h6 class="font-weight-bold" style="font-family: Major Mono Display;">Skill Progress Chart</h6>
+                            <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Javascript <span class="float-right">84%</span></h4>
+                            <div class="progress">
+                                <div class="progress-bar js"  role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">84% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="container"> 
+                            <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Typescript <span class="float-right">64%</span></h4>
+                            <div class="progress">
+                                <div class="progress-bar ts"  role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">64% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                          <div class="container"> 
+                            <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Python<span class="float-right">79%</span></h4>
+                            <div class="progress">
+                                <div class="progress-bar py"  role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">79% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                          <div class="container"> 
+                            <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Machine Learning <span class="float-right">8%</span></h4>
+                            <div class="progress">
+                                <div class="progress-bar ml"  role="progressbar" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">8% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+                          <div class="container"> 
+                            <h4 class="small font-weight-bold" style="font-family: Major Mono Display;">Electron.js <span class="float-right">15%</span></h4>
+                            <div class="progress">
+                                <div class="progress-bar ejs"  role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">
+                                <span class="sr-only">15% Complete</span>
+                                </div>
+                            </div>
+                        </div>
+
+        
     </section>
-</div>
-    
-</div>
+    <footer>
+                <div class="container text-center" id="date-year">
+                    <p class="text-center" style="font-family: 'Major Mono Display', monospace;font-size: 14px;filter: blur(0px) invert(0%);color: rgb(255,255,255);">Copyright © 2021<br>Somnath Das</p>
+                </div>
+        </footer>
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
     <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
